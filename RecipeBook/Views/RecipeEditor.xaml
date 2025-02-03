@@ -1,0 +1,16 @@
+﻿<Window x:Class="RecipeBook.Views.RecipeEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:RecipeBook.ViewModels"
+        Title="Редактирование рецепта" Height="350" Width="500">
+    <Window.DataContext>
+        <vm:RecipeEditorViewModel />
+    </Window.DataContext>
+    <Grid>
+        <TextBox Text="{Binding CurrentRecipe.Name}" Margin="10" Width="460" Height="30" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding CurrentRecipe.Category}" Margin="10,50,10,0" Width="460" Height="30" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding CurrentRecipe.Cuisine}" Margin="10,90,10,0" Width="460" Height="30" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding CurrentRecipe.Instructions}" Margin="10,130,10,0" Width="460" Height="100" VerticalAlignment="Top" AcceptsReturn="True"/>
+        <Button Content="Сохранить" Command="{Binding SaveCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Height="35" Margin="10"/>
+    </Grid>
+</Window>
